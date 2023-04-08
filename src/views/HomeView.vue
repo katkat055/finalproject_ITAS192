@@ -8,16 +8,18 @@
     <!-- left side -->
     <div class="pt-10 pb-6 mx-10">
       <!-- quote -->
-      <div>
-        <h1 class="text-xl font-bold">{{ currentDate }}</h1>
-        <div class="text-center mt-4" v-if="info">
+      <h1 id="date" class="text-xl font-bold">{{ currentDate }}</h1>
+      <div v-if="isLoading">Loading...</div>
+      <div v-else>
+        <div id="quote" class="text-center mt-4" v-if="info">
           {{ info.quotes[random].quote }}
         </div>
-        <div class="text-center" v-if="info">
+        <div id="author" class="text-center" v-if="info">
           {{ info.quotes[random].author }}
         </div>
         <div class="flex justify-center items-center mt-2">
           <button
+            id="getNewQuote"
             class="bg-slate-700 text-white px-2 py-1 border rounded-md"
             @click="getRandom"
           >
@@ -39,7 +41,7 @@
               :key="items"
             >
               {{ items }} {{ todoTime }}
-              <button @click="deleteTodo" class="float-right">
+              <button id="delete" @click="deleteTodo" class="float-right">
                 <span class="text-red-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +130,7 @@ export default {
     addTodo() {
       if (this.todoText.trim().length > 0) {
         if (!Array.isArray(this.todoItems)) {
-          this.todoItems = []; // initialize the array
+          this.todoItems = [];
         }
         this.todoItems.push(this.todoText.trim() + " " + this.todoTime);
         this.todoText = "";
