@@ -8,8 +8,8 @@
     <!-- left side -->
     <div class="pt-10 pb-6 mx-10">
       <!-- quote -->
-      <h1 id="date" class="text-xl font-bold">{{ currentDate }}</h1>
-      <div v-if="isLoading">Loading...</div>
+      <h2 id="date" class="text-xl font-bold">{{ currentDate }}</h2>
+      <div id="loading" v-if="isLoading">Loading...</div>
       <div v-else>
         <div id="quote" class="text-center mt-4" v-if="info">
           {{ info.quotes[random].quote }}
@@ -36,6 +36,7 @@
         <div>
           <ol>
             <li
+              id="todoList"
               class="bg-slate-200 text-xl md:text-xl border shadow-xl rounded-lg px-6 py-6 mb-6"
               v-for="items in todoItems"
               :key="items"
@@ -93,7 +94,7 @@
     <div
       class="w-screen object-fill h-40 md:h-screen flex justify-center items-center ml-0 md:ml-10"
     >
-      <img class="h-40 md:h-screen w-screen object-cover" :src="picture" />
+      <img id="picture" class="h-40 md:h-screen w-screen object-cover" :src="picture" />
     </div>
     <!-- right side -->
   </div>
