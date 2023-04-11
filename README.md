@@ -49,3 +49,21 @@ But it's still recommended to test the production build with `test:e2e` before d
 npm run build
 npm run test:e2e
 ```
+
+# Idea
+This project is a daily to do list that gives you a new quote, its author, and a picture when you click on the button "Get New Quote". It also allows you to add items and a time to a to do list which gets stored in local storage and allows you to delete the item when you click the trash can icon. I got this idea because when I was looking for APIs there were a lot that had pictures and quotes. Whenever I think about insporational quotes I associate it with productivity so I made a to do app. 
+
+# References
+- https://v2.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html?redirect=true
+- https://dev.to/techsolutionstuff/vue-js-get-current-date-and-time-3f30
+- https://vuejs.org/guide/essentials/list.html
+- https://v2.vuejs.org/v2/cookbook/client-side-storage.html
+- https://stackoverflow.com/questions/59835695/vuejs-remove-item-from-array
+
+# If I had more time/features I want to add
+- A complete function to add it into a new list called complete or add a line through it
+- I would also add multiple dates that allows users to look back at what they had/completed instead of having to delete everything
+- I would have a clear function that deletes all items instead of having to delete them one by one
+
+# Feedback
+I had a difficult time learning JavaScript because I do not learn well with slides and prefer hands on work. We had labs that helped me understand the concepts better but I also found them hard to do with the lack of demonstration on the slides. When learning Java, Allan went over code with us as we typed them on vscode and explained how the code worked and how to add them with other code etc. I find it easier to learn that way but other than that the class was great and I learned a lot.

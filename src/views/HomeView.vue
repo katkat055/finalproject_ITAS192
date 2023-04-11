@@ -9,8 +9,7 @@
     <div class="pt-10 pb-6 mx-10">
       <!-- quote -->
       <h2 id="date" class="text-xl font-bold">{{ currentDate }}</h2>
-      <div id="loading" v-if="isLoading">Loading...</div>
-      <div v-else>
+      <div>
         <div id="quote" class="text-center mt-4" v-if="info">
           {{ info.quotes[random].quote }}
         </div>
@@ -37,7 +36,7 @@
           <ol>
             <li
               id="todoList"
-              class="bg-slate-200 text-xl md:text-xl border shadow-xl rounded-lg px-6 py-6 mb-6"
+              class="bg-slate-200 text-xl md:text-xl border shadow-xl rounded-lg px-6 py-8 mb-6"
               v-for="items in todoItems"
               :key="items"
             >
@@ -92,9 +91,13 @@
 
     <!-- right side -->
     <div
-      class="w-screen object-fill h-40 md:h-screen flex justify-center items-center ml-0 md:ml-10"
+      class="w-100 object-fill h-40 md:h-screen flex justify-center items-center ml-0 md:ml-10"
     >
-      <img id="picture" class="h-40 md:h-screen w-screen object-cover" :src="picture" />
+      <img
+        id="picture"
+        class="h-40 md:h-screen w-screen object-cover"
+        :src="picture"
+      />
     </div>
     <!-- right side -->
   </div>
@@ -119,7 +122,7 @@ export default {
       axios.get("https://dummyjson.com/quotes").then((response) => {
         this.info = response.data;
         this.random = Math.floor(Math.random() * this.info.quotes.length);
-        axios.get("https://source.unsplash.com/random").then((response) => {
+        axios.get("https://source.unsplash.com/featured").then((response) => {
           this.picture = response.request.responseURL;
         });
       });
