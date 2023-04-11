@@ -50,6 +50,11 @@ npm run build
 npm run test:e2e
 ```
 
+## How I ran e2e and unit tests for cypress
+1. npm run dev
+2. add a new terminal
+3. npx cypress open
+
 # Idea
 This project is a daily to do list that gives you a new quote, its author, and a picture when you click on the button "Get New Quote". It also allows you to add items and a time to a to do list which gets stored in local storage and allows you to delete the item when you click the trash can icon. I got this idea because when I was looking for APIs there were a lot that had pictures and quotes. Whenever I think about insporational quotes I associate it with productivity so I made a to do app. 
 
